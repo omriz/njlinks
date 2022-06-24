@@ -1,0 +1,21 @@
+{
+  "name": "njlinks",
+  "version": "1.0.0",
+  "description": "Golinks like server written in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodejs index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/omriz/njlinks"
+  },
+  "keywords": [
+    "nodjes",
+    "devex",
+    "links"
+  ],
+  "author": "Omri Zohar",
+  "license": "MIT"
+}
