@@ -6,7 +6,7 @@ describe('Storage tests', function () {
       let s = new storage.Storage();
       assert.equal(s.get('google'), 'https://www.google.com')
     });
-it('non-exist', function () {
+    it('non-exist', function () {
       let s = new storage.Storage();
       assert.equal(s.get('lkjadlasdl'), null)
     });
