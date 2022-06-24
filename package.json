@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodejs index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
     "links"
   ],
   "author": "Omri Zohar",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
+  }
 }
