@@ -1,20 +1,23 @@
 // The main core of the redirector logic.
-let storage = {};
-function redirect(req, res) {
+const store = require('./storage');
+function Redirector() {
+    // Storage initialization.
+    this.storage = new store.Storage();
+}
+
+Redirector.prototype.redirect = function (req, res) {
     let key = req.url.substring(1)
-    if (key in storage) {
-        res.writeHead(302, { location: storage[key] });
-        res.end()
-    } else {
-        res.writeHead(200, { "Content-Type": "text/text" });
+    let v = this.storage.get(key)
+    if (Object.is(v, null)) {
+        res.writeHead(500, { "Content-Type": "text/text" });
         res.write(`Key "${key}" not found in storage`);
         res.end();
+    } else {
+        res.writeHead(302, { location: v });
+        res.end()
     }
 }
 
-function redirector_init() {
-    storage['google'] = 'https://www.google.com';
+module.exports = {
+    Redirector: Redirector
 }
-
-redirector_init()
-exports.redirect = redirect
