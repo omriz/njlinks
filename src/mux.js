@@ -8,7 +8,7 @@ async function mux(req, res) {
         res.write("ok");
         res.end();
     } else {
-        Redirector.redirect(req,res);
+        Redirector.handle(req,res);
     }
 }
 
